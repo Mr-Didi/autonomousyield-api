@@ -18,7 +18,7 @@ app.add_middleware(
 def read_root():
     return {"status": "operational", "node": "alpha-primary", "intent": "standby"}
 
-@app.get("/api/v1/yield/arbitrage")
+@app.api_route("/api/v1/yield/arbitrage", methods=["GET", "HEAD"])
 def get_arbitrage_opportunities():
     # Simulierte Daten-Ausgabe für den Proof-of-Concept
     return {
